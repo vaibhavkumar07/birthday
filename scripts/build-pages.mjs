@@ -14,7 +14,7 @@ const build = spawnSync("npm", ["run", "build"], {
 });
 if (build.status !== 0) process.exit(build.status ?? 1);
 
-const re = /(["'(=])\/(_next\/|images\/|favicon\.svg)/g;
+const re = /(["'`(=])\/(_next\/|images\/|favicon\.svg)/g;
 const exts = new Set([".html", ".js", ".css", ".rsc", ".json", ".txt"]);
 const walk = (dir) => {
   for (const e of readdirSync(dir, { withFileTypes: true })) {
